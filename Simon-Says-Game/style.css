@@ -1,0 +1,59 @@
+body {
+  text-align: center;
+  margin: 0;
+}
+
+.line-1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.line-2 {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  margin: auto;
+}
+.line-1 div {
+  border: 2px solid black;
+  border-radius: 1rem;
+  width: 11rem;
+  height: 11rem;
+  margin: 0.25rem;
+}
+
+.line-2 div {
+  border: 2px solid black;
+  margin: 0.25rem;
+  border-radius: 1rem;
+  width: 11rem;
+  height: 11rem;
+}
+
+.red {
+  background-color: rgb(250, 75, 62);
+}
+
+.yellow {
+  background-color: rgb(255, 234, 55);
+}
+
+.blue {
+  background-color: rgb(62, 75, 250);
+}
+
+.green {
+  background-color: rgb(62, 250, 75);
+}
+
+.game-flash {
+  background-color: white;
+}
+
+.user-flash {
+  background-color: black;
+}
+
+.error-flash {
+  background-color: red;
+}
