@@ -5,6 +5,9 @@ Array.from(buttons).forEach((button) => {
     if (event.target.innerHTML == "=") {
       string = eval(string);
       document.querySelector("input").value = string;
+    } else if (event.target.innerHTML == "C") {
+      string = "";
+      document.querySelector("input").value = string;
     } else {
       console.log(event.target);
       string = string + event.target.innerHTML;
