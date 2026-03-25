@@ -43,3 +43,26 @@ h5 {
   padding-top: 2rem;
   display: none;
 }
+
+#suggestions {
+  list-style-type: none;
+}
+li {
+  text-align: center;
+}
+
+#strength {
+  color: black;
+}
+
+.strong {
+  color: green;
+}
+
+.medium {
+  color: rgb(255, 251, 0);
+}
+
+.weak {
+  color: red;
+}
