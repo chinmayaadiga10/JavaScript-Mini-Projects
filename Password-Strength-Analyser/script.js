@@ -54,3 +54,46 @@ form.addEventListener("submit", (event) => {
 
   evaluateStrength(userPassword);
 });
+
+const evaluateStrength = (password) => {
+  let score = 0;
+  let digits = /[0-9]/.test(password);
+  let upperCase = /[A-Z]/.test(password);
+  let lowerCase = /[a-z]/.test(password);
+  let symbols = /[^A-Za-z0-9\s]/.test(password);
+
+  let result = 0;
+  let reasons = [];
+  if (password.length > 8) {
+    score += 1;
+    console.log(score);
+  } else {
+    reasons.push("Increasing length of password");
+  }
+  if (digits == true) {
+    score += 1;
+    console.log(score);
+  } else {
+    reasons.push("Add Digits to the password");
+  }
+  if (upperCase == true) {
+    score += 1;
+    console.log(score);
+  } else {
+    reasons.push("Add Uppercase Characters");
+  }
+  if (lowerCase == true) {
+    score += 1;
+    console.log(score);
+  } else {
+    reasons.push("Add Lowercase Characters");
+  }
+  if (symbols == true) {
+    score += 1;
+    console.log(score);
+  } else {
+    reasons.push("Add Symbols to the password");
+  }
+
+  console.log(reasons);
+};
