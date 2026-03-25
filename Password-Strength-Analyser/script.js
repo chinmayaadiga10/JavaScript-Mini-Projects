@@ -96,4 +96,37 @@ const evaluateStrength = (password) => {
   }
 
   console.log(reasons);
+  let strengthIndex = document.querySelector("#strength");
+  let scoreIndex = document.querySelector("#score");
+  let tips = document.querySelector("#tips");
+  const listItems = document.querySelectorAll("#suggestions li");
+
+  result = score;
+  let percentage = (result / 10) * 100 * 2;
+  if (result >= 4) {
+    console.log("strong password");
+    scoreIndex.innerHTML = `Score : ${percentage}%`;
+    strengthIndex.innerHTML = "Strength Index :<b>Strong</b>";
+    strengthIndex.querySelector("b").className = "strong";
+    // strengthIndex.style.color = "green";
+    tips.innerHTML = "Your Password Looks Perfect!";
+  } else if (result < 4 && result >= 2) {
+    console.log("medium password");
+    scoreIndex.innerHTML = `Score : ${percentage}%`;
+    strengthIndex.innerHTML = "Strength Index : <b>Medium</b>";
+    strengthIndex.querySelector("b").className = "medium";
+    // strengthIndex.style.color = "yellow";
+  } else {
+    console.log("weak password");
+    scoreIndex.innerHTML = `Score : ${percentage}%`;
+    strengthIndex.innerHTML = "Strength Index : <b>Weak</b>";
+    strengthIndex.querySelector("b").className = "weak";
+    // strengthIndex.style.color = "red";
+  }
+  reasons.forEach((reason, i) => {
+    if (listItems[i]) {
+      listItems[i].innerText = reason;
+    }
+  });
+  console.log("function score is : ", score);
 };
