@@ -34,3 +34,85 @@ h1 {
   box-sizing: border-box;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
+
+display-password {
+  width: 95%;
+  height: 4rem;
+  margin-left: 3%;
+  /* margin-top: 1.5rem; */
+  /* margin-bottom: 1.25rem; */
+  border: 1px solid #ccc;
+  border-radius: 0.75rem;
+  background-color: #f9f9f9;
+  box-sizing: border-box;
+  font-size: 1rem;
+  padding-left: 2rem;
+}
+
+.length-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.length-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  width: 100%;
+}
+
+#passwordRange {
+  width: 12rem;
+}
+.passwordNumber {
+  width: 2rem;
+  padding: 0.25rem;
+  text-align: center;
+  border-radius: 0.5rem;
+  border: 1px solid #ccc;
+}
+.test {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 70%;
+  font-size: 1.25rem;
+}
+.test label {
+  padding-right: 2rem;
+}
+#number {
+  font-size: 1.25rem;
+  /* margin: auto; */
+  text-align: center;
+}
+
+input[type="checkbox"] {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 1rem;
+}
+
+button {
+  cursor: pointer;
+  height: 3rem;
+  border-radius: 1.5rem;
+  padding: 0 4.5rem;
+  background-color: #eee;
+  transition: background 0.3s;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  font-weight: 500;
+}
+
+button:hover {
+  background-color: #ddd;
+}
+
+form {
+  display: contents;
+}
