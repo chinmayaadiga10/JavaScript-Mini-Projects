@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Password Generator - Generate Secure Passwords Instantly</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Password Generator</h1>
+    <div class="container">
+      <form id="password-generation-form" action="">
+        <input
+          type="text"
+          class="display-password"
+          placeholder="Your Password Is :"
+          readonly
+          disabled
+        />
+        <div class="length-section">
+          <label for="passwordLength" id="number">Number of Characters</label>
+          <div class="length-container">
+            <input type="range" min="1" max="20" value="8" id="passwordRange" />
+            <input
+              type="number"
+              min="1"
+              max="20"
+              value="8"
+              id="passwordLength"
+              class="passwordNumber"
+            />
+          </div>
+        </div>
+        <div class="test">
+          <label for="uppercase">Include Uppercase</label>
+          <input type="checkbox" id="uppercase" />
+        </div>
+        <div class="test">
+          <label for="digits">Include Digits</label>
+          <input type="checkbox" id="digits" />
+        </div>
+        <div class="test">
+          <label for="symbols">Include Symbols</label>
+          <input type="checkbox" id="symbols" />
+        </div>
+        <button type="submit" id="generate-button">Generate Password</button>
+      </form>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
