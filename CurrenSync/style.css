@@ -1,0 +1,120 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  text-align: center;
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  margin-top: 1.5rem;
+  color: white;
+  font-size: 2.5rem;
+  letter-spacing: 0.12rem;
+  text-shadow: 2px 2px 3px black;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  background: linear-gradient(135deg, #3b62f2 0%, #1e40af 100%);
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  background-color: white;
+  border-radius: 1.25rem;
+  width: 100%;
+  max-width: 25rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2.5rem;
+  min-height: 45vh;
+  box-shadow: 10px 10px 5px #000;
+  margin: 0 auto;
+}
+
+form {
+  margin: 2rem 0;
+}
+
+form select,
+input,
+button {
+  width: 100%;
+  border: none;
+  border-radius: 0.5rem;
+}
+
+form input {
+  border: 1px solid #ccc;
+  padding-left: 1rem;
+  height: 2rem;
+  font-size: 1rem;
+  margin-top: 0.5rem;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+}
+
+form button {
+  background-color: black;
+  background: linear-gradient(to right, #426cf5, #1e4db7);
+  height: 3rem;
+  padding: 0 3rem;
+  color: white;
+  width: 100%;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 1.54rem;
+  box-shadow: 0 4px 14px 0 rgba(0, 0, 0, 0.1);
+}
+
+form button:hover {
+  background-color: #1d4ed8;
+  transform: scale(1.05);
+  filter: brightness(1.1);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.dropdown {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1.5rem;
+}
+
+.display {
+  margin-top: 1.5rem;
+  text-align: center;
+}
+
+.select-container img {
+  max-width: 2.5rem;
+}
+
+.select-container {
+  display: flex;
+  width: 6rem;
+  justify-content: center;
+  border-radius: 0.5rem;
+  border: 1px solid #ccc;
+}
+
+.dropdown i {
+  font-size: 1.5rem;
+  margin-top: 2rem;
+  padding: 0 1.5rem;
+}
