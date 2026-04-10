@@ -63,3 +63,14 @@ const syncFlag = (flag) => {
 //       displayText.innerText = `${value} ${currency1.value} = ${totalExchangeRate} ${currency2.value}`;
 //     });
 // });
+
+swapButton.addEventListener("click", () => {
+  // console.log("swap was clicked");
+  let temp = currency1.value;
+  currency1.value = currency2.value;
+  currency2.value = temp;
+  syncFlag(currency1);
+  syncFlag(currency2);
+
+  button.click();
+});
