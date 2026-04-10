@@ -29,3 +29,14 @@ for (let select of dropdown) {
     syncFlag(event.target);
   });
 }
+
+const syncFlag = (flag) => {
+  console.log(flag);
+  let currencyCode = flag.value;
+  console.log(currencyCode);
+  let countryCode = countryList[currencyCode];
+  console.log(countryCode);
+  let newSource = `https://flagsapi.com/${countryCode}/shiny/64.png`;
+  let image = flag.parentElement.querySelector("img");
+  image.src = newSource;
+};
