@@ -5,6 +5,27 @@ const dropdown = document.querySelectorAll(".dropdown select");
 const button = document.querySelector("button");
 const amount = document.querySelector("form input");
 const displayText = document.querySelector(".display");
+const swapButton = document.getElementById("swap");
+const loader = document.querySelector(".loader");
 
-const currency1 = document.querySelector(".from select");
-const currency2 = document.querySelector(".to select");
+let currency1 = document.querySelector(".from select");
+let currency2 = document.querySelector(".to select");
+
+for (let select of dropdown) {
+  for (let code in countryList) {
+    let newCountry = document.createElement("option");
+    newCountry.innerText = code;
+    newCountry.value = code;
+    if (select.name === "from" && code === "USD") {
+      newCountry.selected = "selected";
+    }
+    if (select.name === "to" && code === "INR") {
+      newCountry.selected = "selected";
+    }
+    select.append(newCountry);
+  }
+
+  select.addEventListener("change", (event) => {
+    syncFlag(event.target);
+  });
+}
