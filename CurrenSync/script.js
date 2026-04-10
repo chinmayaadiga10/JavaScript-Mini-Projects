@@ -40,3 +40,26 @@ const syncFlag = (flag) => {
   let image = flag.parentElement.querySelector("img");
   image.src = newSource;
 };
+
+// button.addEventListener("click", async (event) => {
+//   event.preventDefault();
+//   console.log("button was clicked");
+//   let value = amount.value;
+//   if (value === "" || value < 1) {
+//     value = 1;
+//     amount.value = "1";
+//   }
+//   console.log(currency1.value, currency2.value);
+
+//   let url = `https://v6.exchangerate-api.com/v6/8085db0e7f5923c434961189/latest/${currency1.value}`;
+//   fetch(url)
+//     .then((response) => {
+//       // console.log(response.json());
+//       return response.json();
+//     })
+//     .then((result) => {
+//       let exchangeRate = result.conversion_rates[currency2.value];
+//       let totalExchangeRate = (value * exchangeRate).toFixed(2);
+//       displayText.innerText = `${value} ${currency1.value} = ${totalExchangeRate} ${currency2.value}`;
+//     });
+// });
