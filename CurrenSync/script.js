@@ -74,3 +74,44 @@ swapButton.addEventListener("click", () => {
 
   button.click();
 });
+
+button.addEventListener("click", async (event) => {
+  event.preventDefault();
+  let value = amount.value;
+  if (value === "" || value < 1) {
+    value = 1;
+    amount.value = "1";
+  }
+  let url = `https://v6.exchangerate-api.com/v6/8085db0e7f5923c434961189/latest/${currency1.value}`;
+  try {
+    loader.classList.remove("hidden");
+    displayText.innerText = "";
+
+    let response = await fetch(url);
+    let result = await response.json();
+
+    console.log(result);
+
+    if (!response.ok) {
+      throw new Error("Network Response Failed");
+    }
+
+    if (result.result === "error") {
+      throw new Error("API Error");
+    }
+    if (!result.conversion_rates) {
+      throw new Error("Invalid API Data");
+    }
+
+    let exchangeRate = result.conversion_rates[currency2.value];
+    let totalExchangeRate = (value * exchangeRate).toFixed(2);
+
+    displayText.innerText = `${value} ${currency1.value} = ${totalExchangeRate} ${currency2.value}`;
+  } catch (error) {
+    console.log(error);
+    // displayText.innerText = "Something Went Wrong";
+    displayText.innerText = "⚠️ Failed to fetch exchange rate. Try again.";
+  } finally {
+    loader.classList.add("hidden");
+  }
+});
