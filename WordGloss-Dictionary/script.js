@@ -40,3 +40,21 @@ async function mainHandler(event) {
     }
   }
 }
+
+const fetchWord = async (word) => {
+  let URL = `https://api.dictionaryapi.dev/api/v2/entries/en/${word}`;
+
+  let response = await fetch(URL);
+
+  if (!response.ok) {
+    if (response.status === 404) {
+      throw new Error("WORD NOT FOUND");
+    } else {
+      throw new Error("SERVER ERROR");
+    }
+  }
+
+  let result = await response.json();
+  console.log(result);
+  return result;
+};
