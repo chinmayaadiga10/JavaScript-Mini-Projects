@@ -128,3 +128,23 @@ button:hover {
 .hidden {
   display: none;
 }
+
+.loader {
+  margin: 1rem auto;
+  margin-top: 0.5rem;
+  border: 6px solid #f3f3f3;
+  border-top: 6px solid #59ff00;
+  border-radius: 50%;
+  width: 2rem;
+  height: 2rem;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
