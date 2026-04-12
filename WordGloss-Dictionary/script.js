@@ -91,3 +91,21 @@ const extractData = (result) => {
     "No Definition Available";
   definition.textContent = resultDefinition;
 };
+
+function showError(message) {
+  solutionSection.classList.remove("hidden");
+  keyword.innerHTML = "";
+  phonetic.innerHTML = "";
+  partOfSpeech.innerHTML = "";
+  definition.innerHTML = "";
+
+  definition.innerHTML = `${message}`;
+}
+
+function showLoader() {
+  loader.classList.remove("hidden");
+}
+
+function hideLoader() {
+  loader.classList.add("hidden");
+}
