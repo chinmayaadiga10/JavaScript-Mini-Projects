@@ -58,3 +58,36 @@ const fetchWord = async (word) => {
   console.log(result);
   return result;
 };
+
+const extractData = (result) => {
+  console.log("Word is ", result[0].word);
+  console.log("Phonetics is ", result[0].phonetic);
+  console.log("Part of speech is ", result[0].meanings[0].partOfSpeech);
+  console.log(
+    "Definition of word is ",
+    result[0].meanings[0].definitions[0].definition,
+  );
+  console.log(result[0].meanings[0].synonyms);
+  console.log(result[0].meanings[0].definitions[0].example);
+
+  let resultWord = result[0].word || "Word Not Available";
+  let displayWord = resultWord.charAt(0).toUpperCase() + resultWord.slice(1);
+  keyword.textContent = displayWord;
+
+  let resultPhonetics =
+    result[0].phonetic ||
+    result[0].phonetics?.[0]?.text ||
+    "Phonetic Not Available";
+
+  phonetic.textContent = resultPhonetics;
+
+  let resultSpeech = result[0].meanings?.[0]?.partOfSpeech || "Not Available";
+  let displayResult =
+    resultSpeech.charAt(0).toUpperCase() + resultSpeech.slice(1);
+  partOfSpeech.innerHTML = `Part of Speech of the given word is : <b>${displayResult}</b>`;
+
+  let resultDefinition =
+    result[0].meanings?.[0]?.definitions?.[0]?.definition ||
+    "No Definition Available";
+  definition.textContent = resultDefinition;
+};
