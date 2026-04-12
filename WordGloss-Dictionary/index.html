@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Word Glossary - find meanings instantly</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=BJ+Cree:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+    rel="stylesheet"
+  />
+  <body>
+    <h1>WordGloss</h1>
+    <div class="container">
+      <form action="">
+        <label for="word"></label>
+        <input
+          type="text"
+          name=""
+          id="word"
+          placeholder="Type the word here"
+          required
+        />
+        <button type="submit">Search</button>
+      </form>
+    </div>
+    <div class="loader hidden"></div>
+    <div class="solution hidden">
+      <div class="info-container">
+        <h2 id="keyword"></h2>
+        <p id="phonetic"></p>
+        <p class="word-details" id="speechPart">
+          Part of Speech of the given word is :
+        </p>
+        <p class="word-details" id="meaning">Definition :</p>
+        <p class="word-details" id="definition-result"></p>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
