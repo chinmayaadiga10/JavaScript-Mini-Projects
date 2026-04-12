@@ -1,0 +1,130 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  margin-top: 2rem;
+  text-align: center;
+  font-size: 2.5rem;
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+  font-family: "BJ Cree", serif;
+  font-weight: 600;
+  font-style: normal;
+  color: white;
+  letter-spacing: 0.1rem;
+  text-shadow: 2px 2px 3px black;
+}
+
+/* body {
+  background: #22c3a3;
+  background: linear-gradient(
+    70deg,
+    rgba(34, 195, 163, 1) 0%,
+    rgba(253, 187, 45, 1) 100%
+  );
+} */
+
+body {
+  /* background-color: #59ff00; */
+  /* background: #b9ff93;
+  background: linear-gradient(
+    90deg,
+    rgba(185, 255, 147, 1) 0%,
+    rgba(93, 255, 6, 1) 35%,
+    rgba(36, 102, 0, 1) 100%
+  ); */
+  background: #b9ff93;
+  background: linear-gradient(
+    90deg,
+    rgba(185, 255, 147, 1) 0%,
+    rgba(93, 255, 6, 1) 35%,
+    rgba(185, 255, 147, 1) 100%
+  );
+}
+
+.container {
+  height: 5rem;
+  /* max-height: 30rem; */
+  width: 30rem;
+  border: none;
+  border-radius: 0.6rem;
+  margin: 5rem auto;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+}
+
+.form {
+  display: contents;
+}
+
+input {
+  border: none;
+  border-bottom: 2px solid #59ff00;
+  width: 16rem;
+  height: 2rem;
+  font-size: 1.5rem;
+  margin-right: 2.5rem;
+}
+
+input:focus {
+  outline: none;
+}
+button {
+  background-color: #59ff00;
+  color: white;
+  border: none;
+  height: 2.25rem;
+  font-size: 1.25rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.4rem;
+}
+
+button:hover {
+  transform: scale(1.05);
+  box-shadow: 2px 2px 6px #000;
+}
+
+.solution {
+  margin: auto;
+  width: 30rem;
+  background-color: white;
+  min-height: 20rem;
+  height: auto;
+  border-radius: 0.6rem;
+  padding: 1.5rem;
+  box-sizing: border-box;
+  /* display: none; */
+}
+
+.info-container {
+  /* border: 2px solid black; */
+  height: 100%;
+  width: 100%;
+}
+
+.info-container h2 {
+  font-size: 2rem;
+}
+
+.word-details {
+  margin: 1rem 0;
+  font-size: 1.4rem;
+  opacity: 1;
+}
+
+#meaning {
+  font-size: 1.25rem;
+  font-weight: 550;
+}
+
+.hidden {
+  display: none;
+}
