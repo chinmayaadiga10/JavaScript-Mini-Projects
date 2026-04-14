@@ -41,3 +41,47 @@ document.addEventListener("keydown", (event) => {
     play();
   }
 });
+
+const play = () => {
+  const move = () => {
+    if (game_state != "Play") return;
+
+    let pipe = document.querySelectorAll(".pipe");
+    pipe.forEach((el) => {
+      let pipe_sprite_props = el.getBoundingClientRect();
+      bird_props = bird.getBoundingClientRect();
+
+      if (pipe_sprite_props.right <= 0) {
+        el.remove();
+      } else {
+        if (
+          bird_props.left < pipe_sprite_props.left + pipe_sprite_props.width &&
+          bird_props.left + bird_props.width > pipe_sprite_props.left &&
+          bird_props.top < pipe_sprite_props.top + pipe_sprite_props.height &&
+          bird_props.top + bird_props.height > pipe_sprite_props.top
+        ) {
+          game_state = "End";
+          message.innerHTML =
+            "<span style='color:red'>Game Over</span>" +
+            "<br><b>Press Enter To Restart</b>";
+          message.classList.add("message-style");
+          image.style.display = "none";
+          return;
+        } else {
+          if (
+            pipe_sprite_props.right < bird_props.left &&
+            pipe_sprite_props.right + move_speed >= bird_props.left &&
+            el.increase_score == "1"
+          ) {
+            score_val.innerHTML = +score_val.innerHTML + 1;
+
+            el.increase_score = "0";
+          }
+          el.style.left = pipe_sprite_props.left - move_speed + "px";
+        }
+      }
+    });
+    requestAnimationFrame(move);
+  };
+  requestAnimationFrame(move);
+};
