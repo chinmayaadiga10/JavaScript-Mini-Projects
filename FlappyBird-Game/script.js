@@ -102,4 +102,35 @@ const play = () => {
     requestAnimationFrame(apply_gravity);
   }
   requestAnimationFrame(apply_gravity);
+
+  let pipe_separation = 0;
+  let pipe_gap = 35;
+
+  function createPipe() {
+    if (game_state != "Play") return;
+
+    if (pipe_separation > 115) {
+      pipe_separation = 0;
+      let pipePosition = Math.floor(Math.random() * 43) + 8;
+
+      let pipe_sprite_inv = document.createElement("div");
+      pipe_sprite_inv.className = "pipe pipe-sprite";
+      pipe_sprite_inv.style.top = pipePosition - 70 + "vh";
+      pipe_sprite_inv.style.left = "100vw";
+
+      document.body.appendChild(pipe_sprite_inv);
+
+      let pipe_sprite = document.createElement("div");
+      pipe_sprite.className = "pipe pipe-sprite";
+      pipe_sprite.style.top = pipePosition + pipe_gap + "vh";
+      pipe_sprite.style.left = "100vw";
+      pipe_sprite.increase_score = "1";
+
+      document.body.appendChild(pipe_sprite);
+    }
+
+    pipe_separation++;
+    requestAnimationFrame(createPipe);
+  }
+  requestAnimationFrame(createPipe);
 };
