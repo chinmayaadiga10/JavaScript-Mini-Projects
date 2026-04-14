@@ -84,4 +84,22 @@ const play = () => {
     requestAnimationFrame(move);
   };
   requestAnimationFrame(move);
+  function apply_gravity() {
+    if (game_state != "Play") return;
+
+    bird_dy += gravity;
+
+    if (bird_props.top <= 0 || bird_props.bottom >= background.bottom) {
+      game_state = "End";
+      message.style.left = "28vw";
+      window.location.reload();
+      message.classList.remove("message-style");
+      return;
+    }
+
+    bird.style.top = bird_props.top + bird_dy + "px";
+    bird_props = bird.getBoundingClientRect();
+    requestAnimationFrame(apply_gravity);
+  }
+  requestAnimationFrame(apply_gravity);
 };
