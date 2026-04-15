@@ -37,3 +37,44 @@ const showPasswords = () => {
   passwordTable.innerHTML = tableHTML;
   passwordTable.style.border = "2px solid black";
 };
+
+window.deletePassword = (index) => {
+  const data = localStorage.getItem("passwords");
+  let info = JSON.parse(data);
+
+  const deletedSite = info[index].website;
+  info.splice(index, 1);
+
+  localStorage.setItem("passwords", JSON.stringify(info));
+  alert(`Deleted credentials for ${deletedSite}`);
+  showPasswords();
+};
+
+submitBtn.addEventListener("click", (event) => {
+  event.preventDefault();
+
+  if (!websiteInput.value || !usernameInput.value || !passwordInput.value) {
+    alert("Please fill in all fields before submitting.");
+    return;
+  }
+
+  const passwords = localStorage.getItem("passwords");
+  let passwordList = passwords ? JSON.parse(passwords) : [];
+
+  passwordList.push({
+    website: websiteInput.value,
+    username: usernameInput.value,
+    password: passwordInput.value,
+  });
+
+  localStorage.setItem("passwords", JSON.stringify(passwordList));
+  alert("Password saved successfully!");
+
+  websiteInput.value = "";
+  usernameInput.value = "";
+  passwordInput.value = "";
+
+  showPasswords();
+});
+
+showPasswords();
