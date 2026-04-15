@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Password Manager</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <h1>Password Manager</h1>
+    <div class="container">
+      <h2>Your Passwords</h2>
+      <table>
+        <tr>
+          <th>Website</th>
+          <th>Username</th>
+          <th>Passwords</th>
+          <th>Delete</th>
+        </tr>
+      </table>
+      <h3>Add Your Password</h3>
+      <form action="">
+        <label for="website">Website</label>
+        <input type="text" id="website" name="website" required />
+        <br /><br />
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" required />
+        <br /><br />
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" required />
+        <br /><br />
+        <button type="submit" class="btn">Submit</button>
+      </form>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
